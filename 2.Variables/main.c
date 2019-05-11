@@ -4,29 +4,22 @@
 #include <stdlib.h>
 
 int main() {
-
     int i = 4;
     double d = 4.0;
-    char str1[] = "HackerRank ";
+    char s[] = "HackerRank ";
 
     int i2;
     double d2;
-    char str2[100];
+    char s2[100]; // this is not scalable for input of unknown size
 
-     printf("Enter 12 \n");
-     scanf("%d",&i2);
+    // Read inputs from stdin(scanf)
+    scanf("%d", &i2);
+    scanf("%lf", &d2);
+    scanf("%*[\n] %[^\n]", s2);
 
-     printf("Enter 4.0 \n");
-     scanf("%0.f",&d2);
-
-     printf("Enter is the best place to learn and practice coding! \n");
-     scanf("%[^\n]s",&str2);
-
-     printf("%d",i+i2);
-     printf("%.f",d+d2);
-     printf("%s %s",str1,str2);
-
-
+    // Print outputs to stdout(printf)
+    printf("%d\n", i + i2);
+    printf("%0.1lf\n", d + d2);
+    printf("%s%s", s, s2);
 
     return 0;
-}
